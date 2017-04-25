@@ -15,6 +15,7 @@ if (!file.exists("UCI HAR Dataset")) {
     unzip(file) 
 }
 #Getting the activity levels and features 
+actL <- read.table("UCI HAR Dataset/activity_labels.txt")
 actL[,2] <- as.character(actL[,2])
 featuresWanted <- grep("(mean|std)\\(\\)", features[, featureNames])
 measurements <- features[featuresWanted, featureNames]
